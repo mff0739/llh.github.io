@@ -9,17 +9,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* 统一字体，提升美观度 */
             font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
         }
 
         /* 页面背景和整体布局 */
         body {
-            /* 柔和的背景色，避免纯白刺眼 */
             background-color: #f8f9fa;
-            /* 页面内边距，避免内容贴边 */
             padding: 20px;
-            /* 行高优化，提升文字可读性 */
             line-height: 1.6;
         }
 
@@ -27,56 +23,63 @@
         .main-title {
             font-size: 50px;
             text-align: center;
-            color: #2c3e50; /* 深灰色更高级 */
-            /* 文字阴影，增加立体感 */
+            color: #2c3e50;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            /* 上下间距，避免标题拥挤 */
             margin: 20px 0;
         }
 
-        /* 副标题1样式 */
         .sub-title1 {
-            color: #3498db; /* 更柔和的蓝色 */
+            color: #3498db;
             text-align: center;
             font-size: 28px;
             margin: 15px 0;
         }
 
-        /* 警告文字样式 */
         .warning-text {
-            color: #e74c3c; /* 更醒目的红色 */
+            color: #e74c3c;
             text-align: center;
             font-size: 30px;
-            /* 加粗强调 */
             font-weight: bold;
-            /* 文字闪烁动画，增强警示效果 */
             animation: blink 1s infinite alternate;
             margin: 20px 0;
         }
 
         /* 分割线样式优化 */
         hr {
-            /* 去掉默认边框，自定义样式 */
             border: none;
             height: 3px;
             background: linear-gradient(to right, #3498db, #e74c3c);
-            /* 宽度限制，更美观 */
             width: 80%;
             margin: 30px auto;
         }
 
+        /* 核心：图片+文字的弹性布局容器 */
+        .img-text-container {
+            display: flex;
+            align-items: center; /* 垂直居中对齐 */
+            justify-content: center; /* 水平居中 */
+            gap: 30px; /* 文字和图片之间的间距 */
+            margin: 20px auto;
+            width: 90%; /* 容器宽度，适配屏幕 */
+            flex-wrap: wrap; /* 小屏幕自动换行，避免挤压 */
+        }
+
+        /* 左右侧文字样式 */
+        .img-side-text {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center; /* 文字居中 */
+            /* 限制文字宽度，避免过长 */
+            max-width: 200px;
+        }
+
         /* 图片样式优化 */
         .main-img {
-            display: block;
-            margin: 20px auto;
             width: 800px;
-            /* 限制最大宽度，适配小屏幕 */
-            max-width: 90%;
-            /* 圆角效果 */
+            max-width: 90%; /* 小屏幕适配 */
             border-radius: 10px;
-            /* 阴影增加层次感 */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            /* 鼠标悬浮放大效果 */
             transition: transform 0.3s ease;
         }
 
@@ -88,7 +91,6 @@
         audio {
             display: block;
             margin: 20px auto;
-            /* 调整宽度，更协调 */
             width: 80%;
             max-width: 600px;
         }
@@ -97,9 +99,9 @@
         .music-title {
             text-align: center;
             font-size: 24px;
-            color: #8e44ad; /* 紫色更有特色 */
+            color: #8e44ad;
             margin: 15px 0 30px 0;
-            font-style: italic; /* 斜体增加风格 */
+            font-style: italic;
         }
 
         /* 闪烁动画定义 */
@@ -114,8 +116,18 @@
     <h2 class="sub-title1">由三谋秦始皇制作</h2>
     <h2 class="warning-text">三谋狂魔哥编号11211056963避雷！避雷！避雷！</h2>
     <hr>
-    <img src="1.jpg" class="main-img" title="臭名昭著背刺犬">
-    <audio src="2.mp3" controls autoplay loop></audio>
+    
+    <!-- 图片+左右文字容器 -->
+    <div class="img-text-container">
+        <!-- 左侧文字 -->
+        <div class="img-side-text">背刺成瘾 垃圾不如</div>
+        <!-- 图片 -->
+        <img src="1.jpg" class="main-img" title="臭名昭著背刺犬" alt="相关图片">
+        <!-- 右侧文字 -->
+        <div class="img-side-text">避坑避雷 远离此人</div>
+    </div>
+
+    <audio src="2.mp3" controls loop></audio>
     <h3 class="music-title">送葬曲</h3>
     <h3 class="warning-text">臭名昭著背刺犬</h3>
 </body>
